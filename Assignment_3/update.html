@@ -1,0 +1,50 @@
+<!--
+Name: Lo Tsz Yuk
+SID: 1155133625
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=Big5">
+    </head>
+    <body>
+        <h1>Update Event</h1>
+        <form>
+            <label for="eventId">Event Id</label>
+            <input type="text" id="eventId" name="eventId" onchange=show(eventId.value)>
+            <br>
+
+            <h3 id="eventDetail"></h3>
+            <br>
+
+            <label for="eventname">Event name</label>
+            <input type="text" id="eventname" name="name">
+            <br>
+        
+            <label for="loc">Location</label>
+            <input type="text" id="eventloc" name="locId">
+            <br>
+        
+            <label for="eventquota">Event quota</label>
+            <input type="text" id="eventquota" name="quota">
+            <br>
+
+            <button type="button" onclick=update(eventId.value,eventname.value,locId.value,eventquota.value)>submit</button>
+        </form>
+           
+        <script>
+            function show(eId) {
+                fetch('http://localhost:3000/event/' + eId)
+                .then(res => res.json())
+                .then(e => document.getElementById('eventDetail').innerHTML = JSON.stringify(e))
+            }
+
+            function update(eId,eName,elocId,eQuota){
+                fetch('http://localhost:3000/event/' + eId+ '?name=' + eName + '&locId=' + elocId + '&quota=' + eQuota, {
+                    method: 'PUT',
+                }).then(e=> window.location.replace('http://localhost:3000/event/' + eId));
+            }
+        </script>
+    </body>
+</html>
