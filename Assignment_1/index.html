@@ -1,0 +1,194 @@
+
+<!-- Name: Lo Tsz Yuk-->
+<!-- SID: 1155133625 -->
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Page @ Lo Tsz Tuk</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel = "stylesheet" href = "style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Redressed&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Redressed&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Redressed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="icon" type="image/x-icon" href="gamer.png">
+</head>
+<body onload="load()">
+
+    <section id="banner">
+        <div class = 'container' id="jumbotron">
+            <header class="heading">
+                <h1>Lo Tsz Yuk</h1>
+                <p class="lead">Personal Website</p>
+            </header>
+        </div>
+    </section>
+
+
+    <section id="navigation">
+        <nav class="navBar">
+            <div class="nav-links">
+                <ul>
+                    <li><a href="#header_aboutMe" class="about">About</a></li>
+                    <li><a href="#header_Courses" class="courses">Courses</a></li>
+                    <li><a href="#header_hobby" class="hobbies">Hobbies</a></li>
+                    <li><a href="#header_design" class="design">Response Web</a></li>
+                    <li><b><a href="#" id="special" onclick="pop()">Special!</a></b></li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+
+    <section id="tasks">
+        <div class="special_tasks" id="taskBar" style="display: none;">
+            <ul>
+                <li><button type="button" class="btn btn-default" id="task1" onclick="left_center_right()">Task1: Align</button></li>
+                <li><button type="button" class="btn btn-default" id="task2" onclick="add()">Task2: New Hobby</button></li>
+                <li><button type="button" class="btn btn-default" id="task3" onclick="pop_bar()">Task3: Scroll</button></li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="progress"style="display: none;" id="bar">
+        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="myBar"></div>
+    </div>
+
+    <section id="info">
+        <div class="container" >
+            <div class="row">
+                <div class="col-6" id="About_me">
+                    <h2 id="header_aboutMe" style="text-align: left">About me <i class="fas fa-user"></i></h2>
+                    <p> My name is Brian, Year 3. Let me think of what to write......Loading......</p>
+                    <picture>
+                        <source srcset="loading wheel.jpg" media="(max-width: 1000px)">
+                        <source srcset="loading.png" media="(min-width: 1000px)">
+                        <img src="loading%20wheel.jpg" alt="loading" class="image">
+                    </picture>
+                </div>
+                <div class="col-6" id="courses">
+                    <h2 id="header_Courses" style="text-align: left">My Courses <i class="fas fa-book"></i></h2>
+                    <table>
+                        <tr>
+                            <th>Course Code</th>
+                            <th>Title</th>
+                        </tr>
+                        <tr>
+                            <td>CSCI 2720</td>
+                            <td>Wec Development</td>
+                        </tr>
+                        <tr>
+                            <td>CSCI 3310</td>
+                            <td>App Development</td>
+                        </tr>
+                        <tr>
+                            <td>CSCI 4120</td>
+                            <td>VLSI</td>
+                        </tr>
+                        <tr>
+                            <td>CENG 3420</td>
+                            <td> Computer Organization</td>
+                        </tr>
+                        <tr>
+                            <td>CENG 3430</td>
+                            <td>Rapid Prototyping of Digital System</td>
+                        </tr>
+                        <tr>
+                            <td>CENG 4998</td>
+                            <td>Final Year Project</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="padding-bottom: 1%">
+            <div class="row">
+                <div class="col-6" id="hobbies">
+                    <h2 id="header_hobby" style="text-align: left">My Hobbies <i class="fas fa-bed"></i></h2>
+                    <ul id="hobby_list">
+                        <li>Sleep</li>
+                        <li>Daydream</li>
+                        <li>Procrastinate</li>
+                    </ul>
+                </div>
+                <div class="col-6" id="design">
+                    <h2 id="header_design" style="text-align: left">Responsive Web Design <i class="fas fa-brush"></i></h2>
+                    <p> I have set the viewpoint which allow browswer to control the dimension and scalings. Also, the hero banner will scale itself and the headline will fix at the spot with respect to it.
+                        The image will inside About me will change when the width reach 1000px.</p>
+                    <ol>
+                        <li>Setting The Viewport</li>
+                        <li>auto fit header image and headline</li>
+                        <li>Different image depends on the screen size</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section>
+        <div class="container">
+            <div id="comments">
+                <div id="c1001" class="d-flex"> <!-- flex layout -->
+                    <div class="flex-shrink-0"> <!-- disallow div to shrink when page gets smaller -->
+                        <svg height="100" width="100">
+                            <circle cx="50" cy="50" r="40" fill="green">
+                            </circle></svg>
+                    </div>
+                    <div class="flex-grow-1"> <!-- allow div to grow and take up all space -->
+                        <h5>chuckjee@cse.cuhk.edu.hk</h5>
+                        <p>This lab is so fun! Let's explore further with Bootstrap and JS fetch.</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <h6>Add your comment:</h6>
+            <form>
+                <div class="mb-3">
+                    <label for="new-email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="new-email" placeholder="name@example.com" required>
+                </div>
+                <div class="mb-3">
+                    <label for="new-comment" class="form-label">Comment</label>
+                    <textarea class="form-control" id="new-comment" rows="3" required></textarea>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="new-color" id="new-color-red" value="red">
+                    <label class="form-check-label" for="new-color-red">Red</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="new-color" id="new-color-green" value="green">
+                    <label class="form-check-label" for="new-color-green">Green</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="new-color" id="new-color-yellow" value="yellow">
+                    <label class="form-check-label" for="new-color-yellow">yellow</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="new-color" id="new-color-blue" value="blue">
+                    <label class="form-check-label" for="new-color-red">blue</label>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="processform()">Add comment</button>
+
+            </form>
+        </div>
+    </section>
+    <section class="foot">
+        <footer>
+            <hr>
+            <p class="credit"> This website was built on 21/2/2022. @ Lo Tsz Yuk</p>
+        </footer>
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>
